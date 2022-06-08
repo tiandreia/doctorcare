@@ -1,9 +1,9 @@
 window.addEventListener('scroll', onScroll)
-
 onScroll()
+
 function onScroll() {
-  showNavOnScroll ()
-  showBackToTopButtonOnScroll ()
+  showNavOnScroll()
+  showBackToTopButtonOnScroll()
 
   activateMenuAtCurrentSection(home)
   activateMenuAtCurrentSection(services)
@@ -21,25 +21,25 @@ function activateMenuAtCurrentSection(section) {
   const sectionTopReachOrPassedTargetline = targetLine >= sectionTop
 
   // verificar se a base está abaixo da linha alvo
- 
+
   const sectionEndsAt = sectionTop + sectionHeight
   const sectionEndPassedTargetline = sectionEndsAt <= targetLine
 
   // limites da seção
-  const sectionBoundaries = 
-  sectionTopReachOrPassedTargetline &&
-  !sectionEndPassedTargetline
+  const sectionBoundaries =
+    sectionTopReachOrPassedTargetline && !sectionEndPassedTargetline
 
   const sectionId = section.getAttribute('id')
   const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
 
   menuElement.classList.remove('active')
   if (sectionBoundaries) {
-   menuElement.classList.add('active')
+    menuElement.classList.add('active')
   }
 }
 
-function showNavOnScroll () {
+function showNavOnScroll() {
+  const navigation = document.querySelector('#navigation')
   if (scrollY > 0) {
     navigation.classList.add('scroll')
   } else {
@@ -47,9 +47,8 @@ function showNavOnScroll () {
   }
 }
 
-function showBackToTopButtonOnScroll () {
-  console.log(scrollY)
-  if (scrollY > 400) {
+function showBackToTopButtonOnScroll() {
+  if (scrollY > 550) {
     backToTopButton.classList.add('show')
   } else {
     backToTopButton.classList.remove('show')
@@ -78,8 +77,3 @@ ScrollReveal({
 #about,
 #about header,
 #about .content`)
-
-
-function sayMyName(name) {
-  console.log(name)
-}
