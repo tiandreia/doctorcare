@@ -6,7 +6,7 @@
 }
 
 :root {
---hue: 190;
+  --hue: 190;
 
   --primary-color: hsl(var(--hue), 100%, 26%);
   --headline: hsl(210, 11%, 15%);
@@ -16,7 +16,6 @@
   --brand-light: hsl(calc(var(--hue) - 22), 23%, 89%);
   --brand-light-2: hsl(calc(var(--hue) + 10), 14%, 97%);
   --brand-dark: hsl(var(--hue), 100%, 14%);
-
 
   --bg-light: hsl(180, 14%, 97%);
 
@@ -92,7 +91,7 @@ section .content p {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 150%;
-  
+
   color: var(--paragraph);
 }
 
@@ -139,12 +138,12 @@ section .content p {
   fill: var(--brand-light);
 }
 
-#navigation .logo path[fill*="#00856F"],
+#navigation .logo path[fill*='#00856F'],
 #backToTopButton circle {
   fill: var(--primary-color);
 }
 
-button.open-menu path[stroke*="#00856F"],
+button.open-menu path[stroke*='#00856F'],
 #contact li path {
   stroke: var(--primary-color);
 }
@@ -154,7 +153,7 @@ body.menu-expanded #navigation .logo path,
   fill: white;
 }
 
-#navigation.scroll button.open-menu path[stroke*="#00856F"] {
+#navigation.scroll button.open-menu path[stroke*='#00856F'] {
   stroke: white;
 }
 /*=== NAVIGATION =====================*/
@@ -384,7 +383,7 @@ body.menu-expanded button path {
 }
 
 /*==== ABOUT =================================*/
-#about{
+#about {
   text-align: left;
   background-color: var(--brand-beige);
 }
@@ -430,7 +429,7 @@ footer {
   color: white;
 }
 
-footer .logo{
+footer .logo {
   display: inline-block;
   margin-bottom: 2.4rem;
 }
@@ -441,7 +440,7 @@ footer .logo svg {
 }
 
 footer .logo path {
-  fill: white
+  fill: white;
 }
 
 footer p {
@@ -476,12 +475,11 @@ footer .social-links {
 
 /*==== RESPONSIVO =================================*/
 @media (min-width: 1024px) {
-  
   /*==== GERAL =================================*/
   body {
     overflow: auto;
   }
-  
+
   .wrapper {
     width: min(112rem, 100%);
     display: grid;
@@ -503,7 +501,7 @@ footer .social-links {
     font-size: 4rem;
     line-height: 5.2rem;
   }
-  
+
   /*==== NAVIGATION =================================*/
   /* RESET */
   nav#navigation .wrapper * {
@@ -541,8 +539,8 @@ footer .social-links {
   }
 
   nav#navigation .menu ul li a {
-  color: var(--primary-color);
-  opacity: 0.7;
+    color: var(--primary-color);
+    opacity: 0.7;
   }
 
   nav#navigation .menu a.button {
@@ -568,7 +566,7 @@ footer .social-links {
     color: white;
   }
 
-  nav#navigation.scroll ul li a {
+  nav#navigation.scroll .menu ul li a {
     color: var(--brand-light-2);
     opacity: 0.6;
   }
@@ -579,9 +577,10 @@ footer .social-links {
   }
 
   nav#navigation .menu li a {
-    transition: opacity: .4s
+    transition: opacity 0.4s;
   }
-  
+
+  nav#navigation .menu li a.active,
   nav#navigation .menu li a:hover {
     opacity: 1;
     font-weight: 700;
@@ -628,16 +627,16 @@ footer .social-links {
   #home::before {
     height: calc(96% - var(--nav-height));
   }
-  
+
   #home {
     padding-top: var(--nav-height);
   }
 
   #home .wrapper {
     grid-template-columns: 60.5rem 1fr;
-    grid-template-areas: 
-    'A B'
-    'C C';
+    grid-template-areas:
+      'A B'
+      'C C';
   }
 
   #home .col-a {
@@ -704,11 +703,10 @@ footer .social-links {
   #about .col-a {
     align-self: center;
   }
-  
+
   #about .content p {
     margin-bottom: 0;
   }
-
 
   /*==== CONTACT =================================*/
   #contact .wrapper {
@@ -724,7 +722,7 @@ footer .social-links {
   footer {
     padding-block: 8rem;
   }
-  
+
   footer .wrapper {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'A B';
